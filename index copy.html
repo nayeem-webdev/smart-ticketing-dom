@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Smart Ticketing | P-Ticket</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script
+      src="https://kit.fontawesome.com/12c401b8a1.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "rgba(29, 209, 0, 1)",
+              primary40: "rgba(29, 209, 0, 0.4)",
+              primary10: "rgba(29, 209, 0, 0.1)",
+              hover: "rgba(29, 109, 0, 0.1)",
+              secondary: "rgba(8, 3, 18, 1)",
+              secondary70: "rgba(8, 3, 18, 0.7)",
+              secondary30: "rgba(8, 3, 18, 0.3)",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <header>
+      <nav class="container mx-auto flex justify-between items-center py-5">
+        <div>
+          <p class="text-4xl font-extrabold">PH-Ticket</p>
+        </div>
+        <div>
+          <ul class="flex gap-20 text-secondary70">
+            <li class="hover:text-primary40">Home</li>
+            <li class="hover:text-primary40">About</li>
+            <li class="hover:text-primary40">Destination</li>
+            <li class="hover:text-primary40">Search</li>
+          </ul>
+        </div>
+        <div>
+          <button
+            class="font-bold py-2 px-6 border-2 border-primary rounded-lg text-primary40 hover:bg-primary10"
+          >
+            Bus <i class="fa-solid fa-bus-simple"></i>
+          </button>
+        </div>
+      </nav>
+      <div
+        style="
+          background-image: linear-gradient(
+              180deg,
+              rgba(0, 0, 0, 0.3),
+              transparent
+            ),
+            url(./assets/banner.png);
+        "
+        class="container mx-auto pt-24 pb-28 rounded-3xl bg-cover bg-center bg-no-repeat flex flex-col items-center"
+      >
+        <h1 class="text-white font-extrabold text-5xl text-center leading-snug">
+          End-to-End Travel with <br />
+          <span class="text-primary">P.H Paribahan</span>
+        </h1>
+        <p class="text-white mt-5">
+          Yes, you can run unit tests and view the results directly within the
+          <br />
+          app. The integrated testing features allow for a streamlined .
+        </p>
+        <button
+          class="bg-primary py-3 px-6 font-bold rounded-lg mt-5 hover:bg-white"
+        >
+          BUY TICKETS
+        </button>
+      </div>
+      <div
+        class="container mx-auto flex items-center justify-center gap-6 -mt-10"
+      >
+        <div
+          class="px-5 py-3 bg-white flex border-b-2 border-b-primary rounded-xl"
+        >
+          <div><img src="./assets/people.png" alt="" class="mr-3" /></div>
+          <div>
+            <h1 class="font-extrabold text-2xl">500K+</h1>
+            <p class="text-secondary70">Registered User</p>
+          </div>
+        </div>
+        <div
+          class="px-5 py-3 bg-white flex border-b-2 border-b-primary rounded-xl"
+        >
+          <div><img src="./assets/ticket-cupon.png" alt="" class="mr-3" /></div>
+          <div>
+            <h1 class="font-extrabold text-2xl">1.7 lacks</h1>
+            <p class="text-secondary70">Tickets sold</p>
+          </div>
+        </div>
+        <div
+          class="px-5 py-3 bg-white flex border-b-2 border-b-primary rounded-xl"
+        >
+          <div><img src="./assets/stoppage.png" alt="" class="mr-3" /></div>
+          <div>
+            <h1 class="font-extrabold text-2xl">80K+</h1>
+            <p class="text-secondary70">Rental partners</p>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="container mx-auto mt-20">
+        <h2 class="font-bold text-4xl text-center">Best offers for you</h2>
+        <div class="flex gap-6 justify-center items-center mt-10">
+          <div class="bg-[#FFBF0F] rounded-lg flex w-1/2">
+            <div class="py-5 px-12 flex flex-col gap-2 justify-center w-3/5">
+              <h2 class="font-extrabold text-4xl">15% OFF</h2>
+              <p class="font-bold">on your next purchase</p>
+              <p class="text-secondary70">use by January 2024</p>
+            </div>
+            <img src="./assets/cupon-devider.png" alt="" />
+            <div class="py-5 px-8 flex flex-col gap-2 justify-center w-2/5">
+              <h2 class="font-bold text-3xl text-center">NEW15</h2>
+              <p class="text-secondary70 text-center">Coupon Code</p>
+            </div>
+          </div>
+          <div class="bg-[#F78C9C] rounded-lg flex w-1/2">
+            <div class="py-5 px-12 flex flex-col gap-2 justify-center w-3/5">
+              <h2 class="font-extrabold text-4xl">20% OFF</h2>
+              <p class="font-bold">on your next purchase</p>
+              <p class="text-secondary70">use by January 2024</p>
+            </div>
+            <img src="./assets/cupon-devider.png" alt="" />
+            <div class="py-5 px-8 flex flex-col gap-2 justify-center w-2/5">
+              <h2 class="font-bold text-3xl text-center">COUPLE20</h2>
+              <p class="text-secondary70 text-center">Coupon Code</p>
+            </div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center py-14">
+          <button
+            class="font-bold py-2 px-6 border-2 border-primary rounded-lg text-primary40 hover:bg-primary10"
+          >
+            See All Offers
+          </button>
+        </div>
+      </div>
+      <div
+        class="bg-[#F7F8F8] py-10 rounded-tr-[80px] rounded-tl-[80px] border-t-2 border-t-primary"
+      >
+        <div class="container mx-auto mt-20">
+          <h2 class="font-bold text-4xl text-center">P.H Paribahan</h2>
+          <p class="text-secondary70 text-center mt-3 w-full lg:w-1/2 mx-auto">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+          <div class="bg-white flex mt-5 rounded-3xl">
+            <div class="px-20 w-3/4 flex justify-center items-center">
+              <div class="w-full">
+                <div class="flex justify-between items-center">
+                  <div class="flex gap-3 items-center">
+                    <div><img src="./assets/bus-logo.png" alt="" /></div>
+                    <div>
+                      <h1 class="font-bold text-4xl">PH ELITE AC BIZ</h1>
+                      <p>Coach-010-WEB | AC_Business Class</p>
+                    </div>
+                  </div>
+                  <div class="text-primary40 py-2 px-3 bg-primary10 rounded-md">
+                    <p>
+                      <i class="fa-solid fa-couch"></i>
+                      <span id="seat-left">40</span> Seats Left
+                    </p>
+                  </div>
+                </div>
+                <div class="bg-[#F7F8F8] rounded-3xl mt-5">
+                  <div class="p-8">
+                    <div
+                      class="flex justify-between pb-5 font-bold border-dashed border-b-2"
+                    >
+                      <p class="text-secondary70">Route</p>
+                      <p>Chattogram - Dhaka</p>
+                    </div>
+                    <div
+                      class="flex justify-between py-5 font-bold border-dashed border-b-2"
+                    >
+                      <p class="text-secondary70">Departure Time</p>
+                      <p>9:00 PM</p>
+                    </div>
+                    <div class="pt-5 gap-5 flex">
+                      <div
+                        class="bg-zinc-200 w-full text-center text-secondary70 rounded-md px-3 py-2"
+                      >
+                        Boarding Point - Kadamtali
+                      </div>
+                      <div
+                        class="bg-zinc-200 w-full text-center text-secondary70 rounded-md px-3 py-2"
+                      >
+                        Dropping Point - Sayedabad
+                      </div>
+                      <div
+                        class="bg-zinc-200 w-full text-center text-secondary70 rounded-md px-3 py-2"
+                      >
+                        Est. Time - 5 Hour
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="./assets/info-devider.png" alt="" />
+            <div
+              class="w-1/4 p-5 flex flex-col items-center justify-center gap-1"
+            >
+              <p
+                style="
+                  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold',
+                    sans-serif;
+                "
+                class="bg-primary rounded-full w-6 h-6 flex justify-center items-center text-white text-md"
+              >
+                <!--&#2547-->
+                $
+              </p>
+              <p class="font-bold text-2xl mt-2">550 Taka</p>
+              <p class="text-secondary70">Per Seat</p>
+            </div>
+          </div>
+          <div class="bg-white flex p-8 mt-5 rounded-3xl mb-20">
+            <div class="w-3/5">
+              <div>
+                <div class="border-b-2 border-dashed pb-3 mb-3">
+                  <h3 class="font-medium text-2xl">Select Your Seat</h3>
+                </div>
+                <div
+                  class="border-b-2 border-dashed pb-3 mb-3 flex justify-between"
+                >
+                  <p class="text-secondary30">
+                    <i class="fa-solid fa-couch"></i> Available
+                  </p>
+                  <p class="text-primary">
+                    <i class="fa-solid fa-couch"></i> Selected
+                  </p>
+                </div>
+                <div class="flex w-full">
+                  <!-- row 1 -->
+                  <div class="grid grid-cols-1 gap-x-8 gap-y-5 mr-6">
+                    <div
+                      class="px-3 rounded-sm py-4 text-transparent text-center"
+                    >
+                      A
+                    </div>
+                    <div class="px-3 rounded-sm py-4 text-center">A</div>
+                    <div class="px-3 rounded-sm py-4 text-center">B</div>
+                    <div class="px-3 rounded-sm py-4 text-center">C</div>
+                    <div class="px-3 rounded-sm py-4 text-center">D</div>
+                    <div class="px-3 rounded-sm py-4 text-center">E</div>
+                    <div class="px-3 rounded-sm py-4 text-center">F</div>
+                    <div class="px-3 rounded-sm py-4 text-center">G</div>
+                    <div class="px-3 rounded-sm py-4 text-center">H</div>
+                    <div class="px-3 rounded-sm py-4 text-center">I</div>
+                    <div class="px-3 rounded-sm py-4 text-center">J</div>
+                  </div>
+                  <!-- Seat left-->
+                  <div class="grid grid-cols-2 w-1/2 gap-x-8 gap-y-5 mr-10">
+                    <div
+                      class="col-span-2 px-5 rounded-sm py-4 text-transparent"
+                    >
+                      S
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      A1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      A2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      B1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      B2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      C1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      C2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      D1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      D2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      E1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      E2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      F1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      F2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      G1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      G2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      H1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      H2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      I1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      I2
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      J1
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      J2
+                    </div>
+                  </div>
+                  <!-- Seat right -->
+                  <div class="grid grid-cols-2 w-1/2 gap-x-8 gap-y-5 ml-10">
+                    <div class=""></div>
+                    <div
+                      class="bg-zinc-200 px-5 rounded-sm py-4 flex justify-center items-center"
+                    >
+                      <span class="text-transparent">S</span
+                      ><i class="fa-solid fa-bus-simple"></i
+                      ><span class="text-transparent">S</span>
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      A3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      A4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      B3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      B4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      C3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      C4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      D3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      D4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      E3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      E4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      F3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      F4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      G3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      G4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      H3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      H4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      I3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      I4
+                    </div>
+
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      J3
+                    </div>
+                    <div
+                      class="bg-zinc-100 hover:bg-zinc-200 px-5 rounded-sm py-4 text-center"
+                    >
+                      J4
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="border-dashed border-l-2 ml-5 pl-5 w-2/5">
+              <div class="border-b-2 border-dashed pb-3 mb-3">
+                <h3 class="font-medium text-2xl">Checkout Form</h3>
+              </div>
+
+              <div class="bg-[#F7F8F8] rounded-3xl mt-5">
+                <div class="p-8">
+                  <div
+                    class="flex justify-between pb-5 border-b-2 border-dashed font-bold"
+                  >
+                    <p class="text-secondary70">Seat <span>2</span></p>
+                    <p class="text-secondary70">Class</p>
+                    <p class="text-secondary70">Price</p>
+                  </div>
+                  <div
+                    id="ticket-list-basket"
+                    class="py-3 text-secondary70 border-b-2"
+                  >
+                    <!-- sample input -->
+                    <div class="flex justify-between gap-10 mb-3">
+                      <p class="text-secondary70">C2</p>
+                      <p class="text-secondary70">Economoy</p>
+                      <p class="text-secondary70">550</p>
+                    </div>
+                    <div class="flex justify-between gap-10">
+                      <p class="text-secondary70">C2</p>
+                      <p class="text-secondary70">Economoy</p>
+                      <p class="text-secondary70">550</p>
+                    </div>
+                  </div>
+                  <div class="mt-3 font-bold">
+                    <div class="flex justify-between">
+                      <p class="text-secondary70">Total Price</p>
+                      <p class="text-secondary70">BDT <span>1100</span></p>
+                    </div>
+
+                    <div class="hidden">
+                      <div class="flex justify-between mt-3">
+                        <p class="text-secondary70">Discount</p>
+                        <p class="text-secondary70">BDT <span>1100</span></p>
+                      </div>
+                    </div>
+                    <div class="flex justify-between mt-3">
+                      <p class="text-secondary70">Grand Total</p>
+                      <p class="text-secondary70">BDT <span>1100</span></p>
+                    </div>
+                    <div class="">
+                      <div class="flex my-3 w-full">
+                        <input
+                          class="w-full font-normal px-3 rounded-tl-md border-2 border-primary rounded-bl-md py-3"
+                          type="text"
+                          placeholder="Have any copupon?"
+                        />
+                        <button
+                          class="py-3 px-6 bg-primary text-white rounded-tr-md rounded-br-md"
+                        >
+                          Apply
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-6">
+                <p class="font-bold mb-3">Passenger Name*</p>
+                <input
+                  type="text"
+                  placeholder="Enter your name"
+                  class="mb-4 border-2 rounded-md px-3 py-3 w-full"
+                />
+                <p class="font-bold mb-3">Phone Number*</p>
+                <input
+                  type="number"
+                  placeholder="Enter your 11 digit phone number"
+                  class="mb-4 border-2 rounded-md px-3 py-3 w-full"
+                />
+                <p class="font-bold mb-3">Email ID</p>
+                <input
+                  type="email"
+                  placeholder="Enter your email id"
+                  class="mb-4 border-2 rounded-md px-3 py-3 w-full"
+                />
+                <button
+                  class="bg-primary text-white font-bold px-5 py-3 rounded-md w-full border-2 border-primary"
+                >
+                  Book Ticket
+                </button>
+                <div
+                  class="text-secondary70 flex justify-center gap-5 mt-5 underline"
+                >
+                  <p>Terms and Conditions</p>
+                  <p>Cancellation Policy</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer class="bg-[#030712] py-20">
+      <div
+        class="container mx-auto flex justify-between border-b-2 border-b-gray-400 pb-10 border-dashed"
+      >
+        <div>
+          <h1 class="text-white font-bold text-3xl">PH-Ticket</h1>
+          <p class="text-gray-400 mt-2 white">
+            P-Ticket is a digital platform to make your <br />
+            daily commuting better.
+          </p>
+        </div>
+        <div>
+          <p class="font-bold text-white text-right mb-5">Download our app</p>
+          <div
+            class="flex gap-4 items-center justify-center rounded-xl border-2 p-3 border-white"
+          >
+            <div><img src="./assets/playstore.png" alt="" /></div>
+            <div class="text-white font-bold">
+              <p>GET IT ON</p>
+              <p class="text-3xl">Google Play</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
